@@ -1,4 +1,4 @@
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './Estilo';
 
 export default function Home({ navigation }) {
@@ -12,35 +12,32 @@ export default function Home({ navigation }) {
           style={styles.imagem}
         />
 
-        <Text style={styles.titulo}>Bem-vindo à Home!</Text>
-        <Text style={styles.subtitulo}>Você está logado na aplicação.</Text>
+        <Text style={styles.titulo}>CYBER_NET // HOME</Text>
+        <Text style={styles.subtitulo}>SISTEMA CONECTADO COM SUCESSO</Text>
 
         {/* Botão para Participantes */}
-        <View style={styles.botao}>
-          <Button
-            title="Ver Participantes"
-            onPress={() => navigation.navigate('Participantes')}
-            color="#007AFF"
-          />
-        </View>
+        <TouchableOpacity 
+          style={styles.botaoCyberPrimario}
+          onPress={() => navigation.navigate('Personagens')}
+        >
+          <Text style={styles.textoBotaoEscuro}>ACESSAR_PERSONAGENS</Text>
+        </TouchableOpacity>
 
-        {/* Botão para Escola */}
-        <View style={[styles.botao, { marginTop: 10 }]}>
-          <Button
-            title="Sobre a Escola"
-            onPress={() => navigation.navigate('Escola')}
-            color="#28a745"
-          />
-        </View>
+        {/* Botão para Escola / Jogo */}
+        <TouchableOpacity 
+          style={styles.botaoCyberSecundario}
+          onPress={() => navigation.navigate('Jogo')}
+        >
+          <Text style={styles.textoBotaoClaro}>DADOS_DO_JOGO</Text>
+        </TouchableOpacity>
 
         {/* Botão para Voltar ao Login */}
-        <View style={[styles.botao, { marginTop: 10 }]}>
-          <Button
-            title="Voltar para Login"
-            onPress={() => navigation.navigate('Login')}
-            color="#dc3545"
-          />
-        </View>
+        <TouchableOpacity 
+          style={styles.botaoCyberAlerta}
+          onPress={() => navigation.navigate('Login')}
+        >
+          <Text style={styles.textoBotaoClaro}>ENCERRAR_SESSÃO</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
